@@ -1,0 +1,41 @@
+.home{
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;   
+}
+
+.home__music{
+    background-color: black;
+}
+
+.home__music h1{
+    font-size: 75px;
+    padding: 150px;
+    color: white;
+}
+
+.home__music button{
+    padding: 20px;
+    border-radius: 99px;
+    margin-left: 300px;
+    background-color: salmon;
+    border: none;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+}
+
+.home__book h1{
+    padding: 100px;
+    font-size: 75px;
+}
+
+.home__book button {
+    padding: 20px;
+    border-radius: 99px;
+    margin-left: 300px;
+    background-color: lightgreen;
+    border: none;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+}
+

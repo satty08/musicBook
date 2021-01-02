@@ -4,11 +4,15 @@ import './User.css'
 function User() {
     return (
         <div className="user">
-            <label htmlFor="">Username</label>
-            <input type="text" placeholder="Email" />
-            <label htmlFor="">Password</label>
-            <input type="text" placeholder="Password"/>
-            <button>Sign In</button>
+            <div className="user__box">
+                <div className="user__header">
+                    <h1 className="text-primary text-center"></h1>
+                    <div className="image"></div>
+                </div>
+                <div className="user__body">
+                    
+                </div>
+            </div>
         </div>
     )
 }
