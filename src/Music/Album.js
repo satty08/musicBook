@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Album({ id, title, img, createdAt }) {
+function Album() {
     return (
         <div className="album">
             
