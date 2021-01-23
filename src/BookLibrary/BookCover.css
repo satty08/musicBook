@@ -1,12 +1,12 @@
-.album__poster{
+.bookcover__poster{
     width: 250px;
     height: 500px;
 }
 
-.album__content{
+.bookcover__content{
     font-size: small;
 }
 
-.album__content :hover {
+.bookcover__content :hover{
     color: green;
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import BookCover from './BookLibrary/BookCover';
 import "./Home.css";
 import Album from './Music/Album';
 
@@ -11,14 +12,14 @@ function Home() {
                 <div className="home__musicAlbums">
                     <Album />
                     <Album />
-                    <Album />
                 </div>
             </div>
             <div className="home__book">
                 <h1>What to Read</h1>
                 <button className="home__exploreBook">Explore Library</button>
                 <div className="home__bookLibrary">
-                    
+                    <BookCover />
+                    <BookCover />
                 </div>
             </div>
         </div>
