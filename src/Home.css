@@ -17,7 +17,7 @@
     color: white;
 }
 
-.home__music button{
+.home__exploreMusic{
     padding: 20px;
     border-radius: 99px;
     margin-left: 300px;
@@ -37,8 +37,7 @@
     font-size: 75px;
 }
 
-
-.home__book button {
+.home__exploreBook {
     padding: 20px;
     border-radius: 99px;
     margin-left: 300px;

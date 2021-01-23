@@ -1,0 +1,12 @@
+.album{
+    border: 1px solid black;
+}
+
+.album h1{
+    color: white;
+}
+
+.album__button {
+    background-color: lightseagreen;
+    color: white;
+}
