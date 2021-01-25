@@ -3,6 +3,10 @@
     height: 500px;
 }
 
+.album{
+    cursor: pointer;
+}
+
 .album__content{
     font-size: small;
 }

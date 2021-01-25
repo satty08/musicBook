@@ -5,6 +5,12 @@
     padding: 10px;
 }
 
+.logo{
+    text-decoration: none;
+    color: black;
+}
+
+
 .header__logo{
     height: 70px;
     width: 70px;

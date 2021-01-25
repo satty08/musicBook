@@ -51,12 +51,10 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 50px;
-    cursor: pointer;
 }
 
 .home__bookLibrary{
     display: flex;
     justify-content: space-evenly;
     padding-top: 50px;
-    cursor: pointer;
 }
