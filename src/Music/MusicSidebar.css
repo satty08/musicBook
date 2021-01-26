@@ -1,3 +1,30 @@
 .musicsidebar{
     flex: 0;
+    padding-right: 100px;
+    color: white;
+    background-color: black;
+    height: 100%;
+}
+
+.musicsidebar__upper{
+    flex: 1;
+}
+
+.musicsidebar__lower{
+    flex: 0;
+}
+
+.musicsidebar__content{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.musicsidebar__content span{
+    padding: 10px;
+}
+
+.musicsidebar__content :hover{
+    cursor: pointer;
+    color: green;
 }

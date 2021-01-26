@@ -1,3 +1,39 @@
 .musiclibrary__upper{
     display: flex;
+    flex: 1;
+}
+
+.musiclibrary__player{
+    width: 100%;
+    background-color: grey;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+}
+
+.musiclibrary__playermiddle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.musiclibrary__playerleft{
+    padding-left: 20px;
+    
+}
+
+.musiclibrary__playerright{
+    padding-right: 20px;
+}
+
+.musiclibrary__playermiddlelower{
+    width: 500px;
+    height: 4px;
+    background: rgb(64, 64, 64);;
+    border-radius: 4px;
+    margin-top: 10px;
 }
