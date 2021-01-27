@@ -1,15 +1,15 @@
 import React from 'react';
 import './BookCover.css';
 
-function BookCover() {
+function BookCover({book, author, cover}) {
     return (
         <div className="bookcover">
             <div className="bookcover__image">
-                <img className="bookcover__poster" src="https://images-na.ssl-images-amazon.com/images/I/91hPXkwnaeL.jpg" alt=""/>
+                <img className="bookcover__poster" src={cover} alt=""/>
             </div>
             <div className="bookcover__content">
-                <p>Game of Thrones</p>
-                <p>Author: George R. R. Martin</p>
+                <p>{book}</p>
+                <p>Author: {author}</p>
             </div>
         </div>
     )

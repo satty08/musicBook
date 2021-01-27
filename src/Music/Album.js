@@ -2,15 +2,15 @@
 import React from 'react';
 import './Album.css'
 
-function Album() {
+function Album({name, artist, img}) {
     return (
         <div className="album">
             <div className="album__image">
-                <img className="album__poster" src="https://pbs.twimg.com/media/Eee4NVqU4AI2N2g.jpg" alt=""/>
+                <img className="album__poster" src={img} alt=""/>
             </div>
             <div className="album__content">
-                <p>G.O.A.T</p>
-                <p>Artist: Diljit Dosanjh</p>
+                <p>{name}</p>
+                <p>Artist: {artist}</p>
             </div>
         </div>
     )
