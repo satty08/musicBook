@@ -8,6 +8,7 @@
 .logo{
     text-decoration: none;
     color: black;
+    font-family: 'Lobster', cursive;
 }
 
 
@@ -34,6 +35,7 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    color: black;
 }
 
 .header__right :hover {

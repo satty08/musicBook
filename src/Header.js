@@ -14,10 +14,12 @@ function Header() {
             </Link>
             <div className="header__right">
                 <p>Support</p>
-                <div className="header__rightLogin">
-                    <AccountCircleIcon />
-                    <p>Login</p>
-                </div>
+                <Link to="/login">
+                    <div className="header__rightLogin">
+                        <AccountCircleIcon />
+                        <p>Login</p>
+                    </div>
+                </Link>
             </div>
         </div>
     )
