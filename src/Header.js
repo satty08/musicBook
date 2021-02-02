@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Header() {
     return (
         <div className="header">
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: 'none' }}>
                 <div className="header__left">
                     <img className="header__logo" src="https://cdn-images-1.medium.com/max/1000/1*T4QXG2XMVyWH2TgpKRseYA.png" alt="logo"/>
                     <p className="logo">MusicBook</p>
@@ -14,7 +14,7 @@ function Header() {
             </Link>
             <div className="header__right">
                 <p>Support</p>
-                <Link to="/login">
+                <Link to="/login" style={{ textDecoration: 'none' }}>
                     <div className="header__rightLogin">
                         <AccountCircleIcon />
                         <p>Login</p>

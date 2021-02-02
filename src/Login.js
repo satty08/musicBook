@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
     return (
         <div className="login">
+            <Link to="/" style={{ textDecoration: 'none' }} >
             <div className="login__logo">
                 <img src="https://cdn-images-1.medium.com/max/1000/1*T4QXG2XMVyWH2TgpKRseYA.png" alt="logo"/>
                 <p>MusicBook</p>
             </div>
+            </Link>
             <hr/>
             <div className="login__box">
                 <h2>To continue, log in to MusicBook</h2>
@@ -27,7 +30,7 @@ function Login() {
 
             <div className="signup__button">
                 <p>Don't have an account?</p>
-                <button className="signupButton">Sign Up for MusicBook </button>
+                <Link to="/signup"><button className="signupButton">Sign Up for MusicBook </button></Link>
             </div>
             
         </div>

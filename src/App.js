@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MusicLibrary from './Music/MusicLibrary';
 import BookLibrary from './BookLibrary/BookLibrary';
 import Login from './Login';
+import SignUp from './SignUp';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
           </Route>
           <Route path="/">
           <Header />
