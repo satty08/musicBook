@@ -1,14 +1,15 @@
 .home{
     display: flex;
     justify-content: space-around; 
-    align-items: center;   
+    align-items: center; 
+    flex-direction: row; 
 }
 
 .home__music{
-    background-color: black;
+    background-image: linear-gradient( to right, #f0f2f0, #000c40);
     width: 50%;
     color: white;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .home__musicHeading{
@@ -30,6 +31,8 @@
 
 .home__book{
     width: 50%;
+    padding-bottom: 10px;
+    background-image: linear-gradient(to left, #4568dc, #b06ab3);
 }
 
 .home__book h1{
