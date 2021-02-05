@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './SignUp.css';
 
 function SignUp() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [dob, setdob] = useState(Date)
+
+    const submitValue = () => {
+        const details = {
+            "Name": name,
+            "Email": email,
+            "Password": password,
+            "DOB": dob
+        }
+
+        console.log(details);
+
+        axios.post('http://localhost:3001/user', details).then(info => {
+            console.log(info);
+        })
+    }
+
     return (
         <div className="signup">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -17,14 +39,14 @@ function SignUp() {
                 <button className="signup__fb">Continue with Facebook</button>
                 <div className="signup__form">
                 <label htmlFor="">What's your Email?</label>
-                <input type="email" name="" id="" placeholder="Enter your Email" />
+                <input type="email" onChange={e => setEmail(e.target.value)} name="" id="" placeholder="Enter your Email" />
                 <label htmlFor="">Create a Password</label>
-                <input type="password" name="" id="" placeholder="Enter your Password" />
+                <input type="password" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Enter your Password" />
                 <label htmlFor="">What should we call you?</label>
-                <input type="text" name="" id="" placeholder="Enter a profile name" />
+                <input type="text" onChange={e => setName(e.target.value)} name="" id="" placeholder="Enter a profile name" />
                 <label htmlFor="">What's your date of birth?</label>
-                <input type="date" name="" id=""/>
-                <button className="signup__formButton">Sign Up</button>                
+                <input type="date" onChange={e => setdob(e.target.value)} name="" id=""/>
+                <button onClick={submitValue} className="signup__formButton">Sign Up</button>                
             </div>
             <div className="signup__loginredirect">
                 <p>
