@@ -10,7 +10,9 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const [dob, setdob] = useState(Date)
 
-    const submitValue = () => {
+    const submitValue = (e) => {
+        e.preventDefault();
+
         const details = {
             "Name": name,
             "Email": email,
@@ -20,8 +22,11 @@ function SignUp() {
 
         console.log(details);
 
-        axios.post('http://localhost:3001/user', details).then(info => {
+        axios.post('http://localhost:3001/user', details)
+         .then(info => {
             console.log(info);
+        }).catch(e => {
+            console.log(e)
         })
     }
 
@@ -38,16 +43,16 @@ function SignUp() {
                 <h2>Sign Up for free to Start listening.</h2>
                 <button className="signup__fb">Continue with Facebook</button>
                 <div className="signup__form">
-                <label htmlFor="">What's your Email?</label>
-                <input type="email" onChange={e => setEmail(e.target.value)} name="" id="" placeholder="Enter your Email" />
-                <label htmlFor="">Create a Password</label>
-                <input type="password" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Enter your Password" />
-                <label htmlFor="">What should we call you?</label>
-                <input type="text" onChange={e => setName(e.target.value)} name="" id="" placeholder="Enter a profile name" />
-                <label htmlFor="">What's your date of birth?</label>
-                <input type="date" onChange={e => setdob(e.target.value)} name="" id=""/>
-                <button onClick={submitValue} className="signup__formButton">Sign Up</button>                
-            </div>
+                    <label htmlFor="">What's your Email?</label>
+                    <input type="email" onChange={e => setEmail(e.target.value)} name="" id="" placeholder="Enter your Email" />
+                    <label htmlFor="">Create a Password</label>
+                    <input type="password" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Enter your Password" />
+                    <label htmlFor="">What should we call you?</label>
+                    <input type="text" onChange={e => setName(e.target.value)} name="" id="" placeholder="Enter a profile name" />
+                    <label htmlFor="">What's your date of birth?</label>
+                    <input type="date" onChange={e => setdob(e.target.value)} name="" id=""/>
+                    <button onClick={submitValue} className="signup__formButton">Sign Up</button>                
+                </div>
             <div className="signup__loginredirect">
                 <p>
                     Have an Account? <Link to="/login" className="loginLink" > Login</Link>.
