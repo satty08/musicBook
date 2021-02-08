@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import './SignUp.css';
 
@@ -9,25 +10,47 @@ function SignUp() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [dob, setdob] = useState(Date)
+    let history = useHistory()
 
-    const submitValue = (e) => {
+    const submitValue = async (e) => {
         e.preventDefault();
 
         const details = {
-            "Name": name,
-            "Email": email,
-            "Password": password,
-            "DOB": dob
+            "name": name,
+            "email": email,
+            "password": password,
+            "dateOfBirth": dob
         }
 
         console.log(details);
 
+        // Example of POST
+        // const headers = new Headers()
+        // headers.append('Content-Type', 'application/json')
+
+        // const options = {
+        //     method: 'POST',
+        //     headers,
+        //     body: JSON.stringify(details)
+        // }
+
+        // const request = new Request('http://localhost:3001/user', options)
+
+        // const response = await fetch(request)
+        // const status = response.status
+        // console.log(response);
+        // console.log(status);
+
         axios.post('http://localhost:3001/user', details)
          .then(info => {
             console.log(info);
+            if (info.status === 201){
+                history.push('/')
+            }
         }).catch(e => {
             console.log(e)
         })
+
     }
 
     return (
