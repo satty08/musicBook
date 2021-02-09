@@ -22,7 +22,6 @@ function SignUp() {
             "dateOfBirth": dob
         }
 
-        console.log(details);
 
         // Example of POST
         // const headers = new Headers()
@@ -41,7 +40,7 @@ function SignUp() {
         // console.log(response);
         // console.log(status);
 
-        axios.post('http://localhost:3001/user', details)
+        axios.post('http://localhost:3001/user/signup', details)
          .then(info => {
             console.log(info);
             if (info.status === 201){

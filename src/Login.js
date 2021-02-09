@@ -1,8 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    let history = useHistory()
+
+    const loginSubmit = (e) => {
+        e.preventDefault()
+
+        const loginDetails = {
+            "email": email,
+            "password": password
+        }
+
+        axios.post('http://localhost:3001/user/login', loginDetails)
+         .then(info => {
+             console.log(info);
+             if (info.status === 200) {
+                 history.push("/")
+             }
+         }).catch(e => {
+             console.log(e);
+         })
+    }
+
     return (
         <div className="login">
             <Link to="/" style={{ textDecoration: 'none' }} >
@@ -20,10 +46,10 @@ function Login() {
                 <div className="login__form">
                     <hr/>
                     <label htmlFor="">Username or Email Address</label>
-                    <input type="text" placeholder="Username" />
+                    <input type="text" onChange={e => setEmail(e.target.value)} placeholder="Username" />
                     <label htmlFor="">Password</label>
-                    <input type="text" name="" id="" placeholder="Password" />
-                    <button className="login__button login__formButton">Login</button>
+                    <input type="text" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Password" />
+                    <button onClick={loginSubmit} className="login__button login__formButton">Login</button>
                     <hr/>
                 </div>
             </div>
