@@ -2,11 +2,15 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
+import { actionTypes } from './reducer';
+import { useStateValue } from './StateProvider';
 
 function Login() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const [{}, dispatch] = useStateValue()
 
     let history = useHistory()
 
@@ -21,6 +25,10 @@ function Login() {
         axios.post('http://localhost:3001/user/login', loginDetails)
          .then(info => {
              console.log(info);
+             dispatch({
+                type: actionTypes.SET_USER,
+                user: info.data
+             })
              if (info.status === 200) {
                  history.push("/")
              }

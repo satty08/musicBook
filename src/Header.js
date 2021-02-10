@@ -2,8 +2,13 @@ import React from 'react';
 import './Header.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Link } from 'react-router-dom'
+import { useStateValue } from './StateProvider';
 
 function Header() {
+
+    const [{user}, dispatch] = useStateValue()
+    console.log(user.name);
+
     return (
         <div className="header">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -17,7 +22,10 @@ function Header() {
                 <Link to="/login" style={{ textDecoration: 'none' }}>
                     <div className="header__rightLogin">
                         <AccountCircleIcon />
-                        <p>Login</p>
+                        <p>
+                            Login
+                        </p>
+                        
                     </div>
                 </Link>
             </div>
