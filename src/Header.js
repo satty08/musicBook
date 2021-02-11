@@ -22,9 +22,7 @@ function Header() {
                 <Link to="/login" style={{ textDecoration: 'none' }}>
                     <div className="header__rightLogin">
                         <AccountCircleIcon />
-                        <p>
-                            Login
-                        </p>
+                        <p>Login</p>
                         
                     </div>
                 </Link>

@@ -7,6 +7,7 @@ import MusicLibrary from './Music/MusicLibrary';
 import BookLibrary from './BookLibrary/BookLibrary';
 import Login from './Login';
 import SignUp from './SignUp';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/">
           <Header />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </div>

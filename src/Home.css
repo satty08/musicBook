@@ -4,9 +4,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-family: 'Pangolin', cursive;
 }
 
 .home__heading{
-    color: white;
-    font-size: 70px;
+    color: rgb(216, 201, 201);
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.home__buttons button {
+    padding: 15px 50px 15px 50px;
+    border-radius: 99px;
+    border: none;
+    margin: 40px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.home__music{
+    background-color: #33FF00;
+    color: #0033CC;
+}
+
+
+.home__books{
+    background-color: #6666FF;
 }
