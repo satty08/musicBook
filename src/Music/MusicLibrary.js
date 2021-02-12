@@ -1,41 +1,72 @@
 import React from 'react';
-import './MusicLibrary.css'
-import MusicSidebar from './MusicSidebar';
-import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import PlayCircleFilledWhiteOutlinedIcon from '@material-ui/icons/PlayCircleFilledWhiteOutlined';
-import ChevronRightOutlinedIcon from '@material-ui/icons/ChevronRightOutlined';
-import ChevronLeftOutlinedIcon from '@material-ui/icons/ChevronLeftOutlined';
-import ShuffleIcon from '@material-ui/icons/Shuffle';
-import LoopIcon from '@material-ui/icons/Loop';
-import QueueMusicIcon from '@material-ui/icons/QueueMusic';
+import Album from './Album';
+import './MusicLibrary.css';
 
 function MusicLibrary() {
     return (
         <div className="musiclibrary">
-            <div className="musiclibrary__upper">
-                <MusicSidebar />
-                <div className="musiclibrary__main">
-                    <h1>I'm the main area</h1>
+            <div className="musiclibrary__row">
+                <div className="musiclibrary__rowHeading">
+                    <p>Punjabi Albums</p>
+                </div>
+                <div className="musiclibrary__rowAlbums">
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />                    
                 </div>
             </div>
-            <div className="musiclibrary__player">
-                <div className="musiclibrary__playerleft">
-                    <FavoriteBorderOutlinedIcon />
+            <div className="musiclibrary__row">
+                <div className="musiclibrary__rowHeading">
+                    <p>Bollywood Albums</p>
                 </div>
-                <div className="musiclibrary__playermiddle">
-                    <div className="musiclibrary__playermiddleupper">
-                        <ShuffleIcon />
-                        <ChevronLeftOutlinedIcon />
-                        <PlayCircleFilledWhiteOutlinedIcon />
-                        <ChevronRightOutlinedIcon />
-                        <LoopIcon />
-                    </div>
-                    <div className="musiclibrary__playermiddlelower">
-                        
-                    </div>
-                </div>
-                <div className="musiclibrary__playerright">
-                    <QueueMusicIcon />
+                <div className="musiclibrary__rowAlbums">
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />
+                    <Album 
+                        img="https://1.bp.blogspot.com/-xxHE7E71G04/Xx8Oi8rZlhI/AAAAAAAACnI/3SR7WEmtEygV1_z0LYRwRtVejoyWAH_RACLcBGAsYHQ/s600/G.O.A.T.%2BIntro.jpg"
+                        name="G.O.A.T"
+                        artist="Diljit Dosanjh"
+                    />                    
                 </div>
             </div>
         </div>

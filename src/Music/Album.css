@@ -1,16 +1,19 @@
 .album__poster{
     width: 250px;
-    height: 500px;
+    height: 250px;
 }
 
 .album{
     cursor: pointer;
+    margin: 30px;
 }
 
 .album__content{
     font-size: small;
+    font-weight: bolder;
+    color: white;
 }
 
 .album__content :hover {
-    color: green;
+    color: #33FF00;
 }
