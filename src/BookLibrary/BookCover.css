@@ -1,16 +1,20 @@
 .bookcover__poster{
-    width: 250px;
-    height: 500px;
+    width: 230px;
+    height: 270px;
 }
 
 .bookcover{
     cursor: pointer;
+    margin: 30px;
 }
 
 .bookcover__content{
     font-size: small;
+    font-weight: bolder;
+    color: white;
+
 }
 
 .bookcover__content :hover{
-    color: green;
+    color: #33FF00;
 }

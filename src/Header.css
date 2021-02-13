@@ -42,3 +42,10 @@
     color: green;
     cursor: pointer;
 }
+
+.header__rightLogout{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: black;
+}
