@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
-import { actionTypes } from './reducer';
 import { useStateValue } from './StateProvider';
 
 function Login() {
@@ -10,12 +9,12 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const [{}, dispatch] = useStateValue()
+    const [state, dispatch] = useStateValue()
 
     let history = useHistory()
 
     const loginSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
 
         const loginDetails = {
             "email": email,
@@ -26,12 +25,10 @@ function Login() {
          .then(info => {
              console.log(info);
              dispatch({
-                type: actionTypes.SET_USER,
-                user: info.data
+                 type: 'SET_USER',
+                 user: info.data
              })
-             if (info.status === 200) {
-                 history.push("/")
-             }
+             history.push('/')
          }).catch(e => {
              console.log(e);
          })
@@ -54,9 +51,9 @@ function Login() {
                 <div className="login__form">
                     <hr/>
                     <label htmlFor="">Username or Email Address</label>
-                    <input type="text" onChange={e => setEmail(e.target.value)} placeholder="Username" />
+                    <input type="email" onChange={e => setEmail(e.target.value)} placeholder="Username" />
                     <label htmlFor="">Password</label>
-                    <input type="text" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Password" />
+                    <input type="password" onChange={e => setPassword(e.target.value)} name="" id="" placeholder="Password" />
                     <button onClick={loginSubmit} className="login__button login__formButton">Login</button>
                     <hr/>
                 </div>

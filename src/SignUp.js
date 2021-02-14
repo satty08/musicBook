@@ -44,7 +44,7 @@ function SignUp() {
          .then(info => {
             console.log(info);
             if (info.status === 201){
-                history.push('/')
+                history.push('/login')
             }
         }).catch(e => {
             console.log(e)
