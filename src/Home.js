@@ -7,7 +7,6 @@ function Home() {
 
     const [{user}] = useStateValue()
     let history = useHistory()
-    console.log(user)
 
     const exploreMusic = () => {
         if (!user) {

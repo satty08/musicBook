@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import Home from './Home';
@@ -8,8 +8,28 @@ import BookLibrary from './BookLibrary/BookLibrary';
 import Login from './Login';
 import SignUp from './SignUp';
 import Footer from './Footer';
+import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 function App() {
+
+  const[state, dispatch] = useStateValue();
+  useEffect(() => {
+    auth.onAuthStateChanged(authUser => {
+      if (authUser) {
+        dispatch({
+          type: 'SET_USER',
+          user: authUser
+        })
+      }else{
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+  })
+
   return (
     <Router>
       <div className="App">

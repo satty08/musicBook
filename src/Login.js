@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
+import firebase from 'firebase'
 
 function Login() {
 
@@ -34,6 +36,19 @@ function Login() {
          })
     }
 
+    const googleLogin = () => {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+         .then(auth => {
+             if (auth) {
+                history.push('/')
+             }
+         })
+         .catch(e => {
+             console.log(e);
+         })
+    }
+
     return (
         <div className="login">
             <Link to="/" style={{ textDecoration: 'none' }} >
@@ -46,7 +61,7 @@ function Login() {
             <div className="login__box">
                 <h2>To continue, log in to MusicBook</h2>
                 <button className=" login__fb">Continue with Facebook</button>
-                <button className=" login__google">Continue with Google</button>
+                <button onClick={googleLogin} className=" login__google">Continue with Google</button>
                 <button className=" login__phone">Continue with Phone</button>
                 <div className="login__form">
                     <hr/>

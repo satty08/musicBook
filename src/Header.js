@@ -1,13 +1,19 @@
 import React from 'react';
 import './Header.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 function Header() {
 
-    const [{user}, dispatch] = useStateValue()
-    console.log(user);
+    const history = useHistory()
+
+    const [{user}, dispatch] = useStateValue();
+
+    const userLogout = () => {
+        auth.signOut()
+    }
 
     return (
         <div className="header">
@@ -19,12 +25,20 @@ function Header() {
             </Link>
             <div className="header__right">
                 <p>Support</p>
-                <Link to="/login" style={{ textDecoration: 'none' }}>
+                {!user ? <Link to="/login" style={{ textDecoration: 'none' }}>
                     <div className="header__rightLogin">
                         <AccountCircleIcon />
                         <p>Login</p>
                     </div>
-                </Link>
+                </Link> :
+                <div className="header__rightLogout">
+                    <AccountCircleIcon />
+                    <p onClick={userLogout}>Logout</p>
+                </div>
+                }
+                <div className="username">
+                    {!user ? '' : user.displayName}
+                </div>
             </div>
         </div>
     )
