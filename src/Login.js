@@ -49,6 +49,19 @@ function Login() {
          })
     }
 
+    const facebookLogin = () => {
+        var provider = new firebase.auth.FacebookAuthProvider();
+        auth.signInWithPopup(provider)
+         .then(auth => {
+             if (auth) {
+                history.push('/')
+             }
+         })
+         .catch(e => {
+             console.log(e);
+         })
+    }
+
     return (
         <div className="login">
             <Link to="/" style={{ textDecoration: 'none' }} >
@@ -60,7 +73,7 @@ function Login() {
             <hr/>
             <div className="login__box">
                 <h2>To continue, log in to MusicBook</h2>
-                <button className=" login__fb">Continue with Facebook</button>
+                <button onClick={facebookLogin} className=" login__fb">Continue with Facebook</button>
                 <button onClick={googleLogin} className=" login__google">Continue with Google</button>
                 <button className=" login__phone">Continue with Phone</button>
                 <div className="login__form">
