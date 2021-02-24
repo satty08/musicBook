@@ -15,6 +15,10 @@ function Header() {
         auth.signOut()
     }
 
+    const showDetails = () => {
+        history.push('/account/overview')
+    }
+
     return (
         <div className="header">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -36,7 +40,7 @@ function Header() {
                     <p onClick={userLogout}>Logout</p>
                 </div>
                 }
-                <div className="username">
+                <div onClick={showDetails} className="username">
                     {!user ? '' : user.displayName}
                 </div>
             </div>

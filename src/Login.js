@@ -73,9 +73,9 @@ function Login() {
             <hr/>
             <div className="login__box">
                 <h2>To continue, log in to MusicBook</h2>
-                <button onClick={facebookLogin} className=" login__fb">Continue with Facebook</button>
+                <button onClick={facebookLogin} disabled className=" login__fb">Continue with Facebook</button>
                 <button onClick={googleLogin} className=" login__google">Continue with Google</button>
-                <button className=" login__phone">Continue with Phone</button>
+                <button disabled className=" login__phone">Continue with Phone</button>
                 <div className="login__form">
                     <hr/>
                     <label htmlFor="">Username or Email Address</label>

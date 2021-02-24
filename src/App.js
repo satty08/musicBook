@@ -10,6 +10,7 @@ import SignUp from './SignUp';
 import Footer from './Footer';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
+import User from './User';
 
 function App() {
 
@@ -38,6 +39,10 @@ function App() {
         <Route path="/booklibrary">
             <Header />
             <BookLibrary />
+          </Route>
+          <Route path="/account/overview">
+            <Header />
+            <User />
           </Route>
           <Route path="/musiclibrary">
           <Header />
