@@ -19,6 +19,10 @@ function Header() {
         history.push('/account/overview')
     }
 
+    const support = () => {
+        history.push('/support')
+    }
+
     return (
         <div className="header">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -28,7 +32,7 @@ function Header() {
                 </div>
             </Link>
             <div className="header__right">
-                <p>Support</p>
+                <p onClick={support}>Support</p>
                 {!user ? <Link to="/login" style={{ textDecoration: 'none' }}>
                     <div className="header__rightLogin">
                         <AccountCircleIcon />

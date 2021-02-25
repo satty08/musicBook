@@ -11,6 +11,7 @@ import Footer from './Footer';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 import User from './User';
+import Support from './Support';
 
 function App() {
 
@@ -40,10 +41,6 @@ function App() {
             <Header />
             <BookLibrary />
           </Route>
-          <Route path="/account/overview">
-            <Header />
-            <User />
-          </Route>
           <Route path="/musiclibrary">
           <Header />
             <MusicLibrary />
@@ -53,6 +50,14 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path="/account/overview">
+            <Header />
+            <User />
+          </Route>
+          <Route path="/support">
+            <Header />
+            <Support />
           </Route>
           <Route path="/">
           <Header />
