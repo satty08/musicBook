@@ -2,6 +2,7 @@ import React from 'react';
 import './BookCover.css';
 
 function BookCover({book, author, cover}) {
+
     return (
         <div className="bookcover">
             <div className="bookcover__image">

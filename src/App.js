@@ -12,6 +12,7 @@ import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 import User from './User';
 import Support from './Support';
+import BookReader from './BookLibrary/BookReader';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
     })
   })
 
+  
   return (
     <Router>
       <div className="App">
