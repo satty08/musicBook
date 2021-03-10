@@ -18,22 +18,31 @@ function Login() {
     const loginSubmit = (e) => {
         // e.preventDefault()
 
-        const loginDetails = {
-            "email": email,
-            "password": password
-        }
+    //     const loginDetails = {
+    //         "email": email,
+    //         "password": password
+    //     }
 
-        axios.post('http://localhost:3001/user/login', loginDetails)
-         .then(info => {
-             console.log(info);
-             dispatch({
-                 type: 'SET_USER',
-                 user: info.data
-             })
-             history.push('/')
-         }).catch(e => {
-             console.log(e);
-         })
+    //     axios.post('http://localhost:3001/user/login', loginDetails)
+    //      .then(info => {
+    //          console.log(info);
+    //          dispatch({
+    //              type: 'SET_USER',
+    //              user: info.data
+    //          })
+    //          history.push('/')
+    //      }).catch(e => {
+    //          console.log(e);
+    //      })
+
+    auth.signInWithEmailAndPassword(email, password)
+        .then((auth) => {
+            if(auth){
+                history.push('/')
+            }
+        })
+        .catch(e => alert(e.message))
+
     }
 
     const googleLogin = () => {

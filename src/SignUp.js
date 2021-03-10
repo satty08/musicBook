@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import './SignUp.css';
+import { auth } from './firebase';
 
 function SignUp() {
 
@@ -40,15 +41,23 @@ function SignUp() {
         // console.log(response);
         // console.log(status);
 
-        axios.post('http://localhost:3001/user/signup', details)
-         .then(info => {
-            console.log(info);
-            if (info.status === 201){
-                history.push('/login')
-            }
-        }).catch(e => {
-            console.log(e)
-        })
+        // axios.post('http://localhost:3001/user/signup', details)
+        //  .then(info => {
+        //     console.log(info);
+        //     if (info.status === 201){
+        //         history.push('/login')
+        //     }
+        // }).catch(e => {
+        //     console.log(e)
+        // })
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((auth) => {
+                if(auth){
+                    history.push('/login')
+                }
+            })
+            .catch(e => alert(e.message))
 
     }
 
